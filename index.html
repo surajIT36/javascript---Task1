@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section>
+		<div class="imgBox">
+			<img src="images/pic.jpg" alt="Photo">
+		</div>
+		<div class="contentBox">
+			<div class="formBox">
+				<label>Welcome back</label> <br/>
+				<h2>Login to your account</h2>
+				<form>
+					<div class="inputBox">
+						<span>Email</span>
+						<input type="text" name="Email" id="email">
+					</div>
+					<div class="inputBox">
+						<span>Password</span>
+						<input type="password" name="Password" id="password">
+					</div>
+					<div class="remember">
+						<label><input type="checkbox" class="checkbox-round">&nbsp; Remember me</label>
+						<label> <a href="http://">Forgot password?</a></label>
+					</div>
+					<div class="inputBox">
+						<input type="button" name="submit" value="Login now" onclick="myfun()">
+						<span id="message" style="color: red;"> </span>
+					</div>
+						<button><img src="images/ggi.png" alt="pic" srcset="">&nbsp;Or sign-in with google</button>
+						
+				</form>
+				<div class="footer">
+					<p>Dont have an account?&nbsp; <a href="#">Join free today</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+	function myfun(){
+    const Email_ID = "sankey901@solutions.com";
+    const Pass_word = "mindset";
+    var email_id = document.getElementById("email").value;
+    var pass = document.getElementById("password").value;
+    if(Email_ID == email_id && Pass_word == pass){
+        window.location.href = "Home.html";
+
+    }
+    else if(Email_ID === email_id && Pass_word !== pass ){
+        document.getElementById("message").innerHTML="Incorrect Password";
+    }
+    else if(Email_ID !== email_id && Pass_word === pass ){
+        document.getElementById("message").innerHTML="Invalid Email";
+    }
+    else{
+        document.getElementById("message").innerHTML="Incorrect Email and Password";
+    }
+}
+</script>
+</html>
